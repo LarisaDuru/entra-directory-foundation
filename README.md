@@ -1,4 +1,4 @@
-# Northwind Services — Organization Design
+# Northwind Services: Organization Design
 
 ## Group Design
 
