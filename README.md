@@ -32,5 +32,5 @@ During the build, I found inconsistent department values such as `Finanace`, `Sa
 I also initially used simple group names such as `Finance`. I corrected them to follow the agreed naming convention, such as `SEC-Dept-Finance`. This reinforced the importance of establishing naming standards before creating directory objects, because correcting inconsistent naming becomes more difficult as a directory grows.
 
 
-[!image alt](https://github.com/LarisaDuru/entra-directory-foundation/blob/45ff33806f83dbf3a882e25b6320ece2806db39c/screenshots/UsersTemplate.csv)
+![image alt](https://github.com/LarisaDuru/entra-directory-foundation/blob/45ff33806f83dbf3a882e25b6320ece2806db39c/screenshots/UsersTemplate.csv)
 
