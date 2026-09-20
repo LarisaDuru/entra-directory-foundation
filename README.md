@@ -31,4 +31,4 @@ With 500 users, I would keep the department structure but introduce dynamic grou
 During the build, I found inconsistent department values such as `Finanace`, `Sales Staff`, `HR staff`, and `Contractor`. I corrected them to `Finance`, `Sales`, `HR`, and `Contractors` so the directory uses consistent department values. I also had issues determining the domain name for each username/group. Lol, this took me 1 hour to figure it out.
 I also initially used simple group names such as `Finance`. I corrected them to follow the agreed naming convention, such as `SEC-Dept-Finance`. This reinforced the importance of establishing naming standards before creating directory objects, because correcting inconsistent naming becomes more difficult as a directory grows.
 
-[A Practice Screenshot](screenshots/UsersTemplate.csv)
+
