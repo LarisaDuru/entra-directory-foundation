@@ -1,0 +1,1 @@
+# entra-directory-foundation
