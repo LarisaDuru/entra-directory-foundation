@@ -1,36 +1,79 @@
-# Northwind Services: Organization Design
+# Northwind Services  Entra Directory Foundation
 
-## Group Design
+## Project Overview
 
-Northwind uses security groups to organize users by department and job function. I used the naming convention `SEC-<Type>-<Name>` so each group's purpose is immediately clear.
+This project demonstrates the design and setup of Nothwind's identity directory using Microsoft Entra ID. The goal was to create a structured directory where users can be organized and access can eventually be managed through security groups instead of individual users.
 
- Group                  Why it exists                                                                                                        
+## Business Scenario
 
-- `SEC-Dept-Executive`  Identifies the company's executive user and provides a clear department boundary for future executive access.        
-- `SEC-Dept-IT`          Groups employees working in IT, including the IT Manager, Systems Administrator, and Help Desk Technician.           
-- `SEC-Dept-Finance`     Groups employees responsible for finance, payroll, and invoicing so finance-related access can be managed centrally. 
-- `SEC-Dept-Sales`       Groups Sales employees so Sales-related access can be managed through one group rather than individual accounts.     
-- `SEC-Dept-HR`          Groups HR employees responsible for employee administration, onboarding, and offboarding.                            
-- `SEC-Dept-Contractors` Separates external contractors from employees so their access can be identified and reviewed independently.          
-- `SEC-Role-Helpdesk`    Identifies users with Help Desk responsibilities regardless of their department.                                     
+Northwind Services is a fictional 15-person company moving from shared logins and spreadsheets to Microsoft Entra ID.
 
-## Why Department Groups
+The company has employees across:
+- Executive
+- IT
+- Finance
+- Sales
+- HR
+- Contractors
 
-I grouped users by department because Northwind is a small organization and department membership provides a simple, understandable way to organize people and manage access. It also avoids assigning access directly to individual users.Employees in the same department can have different responsibilities, applications, and privilege levels. This is why I also created the `SEC-Role-Helpdesk` group to represent a job function separately from the IT department.
+The sales employees was later expanded to include a fifth salesperson, bringing the total to 16 Northwind users.
 
-## Contractor Decision
+## Tools Used
 
-I placed contractors in `SEC-Dept-Contractors` rather than treating them exactly like regular employees. Contractors are external workers with fixed end dates, so separating them makes their accounts easier to identify and review. Their access should be removed or their accounts disabled when their contracts end.
+- Microsoft Entra ID
+- GitHub
+- Screenshots for documentation and evidence
 
-## Scaling to 500 People
+## What I Built
 
-With 500 users, I would keep the department structure but introduce dynamic group membership using attributes such as department and job title, where the appropriate Entra licensing is available. I would automate joiner, mover, and leaver processes and establish periodic access reviews to reduce manual administration and stale access.
+- Created Northwind user accounts in Microsoft Entra ID
+- Created department-based security groups
+- Created a role-based `SEC-Role-Helpdesk` group
+- Added users to the appropriate groups
+- Applied consistent department values
+- Established a security group naming convention
+- Documented the directory design and contractor approach
+   Compared group-based access with individual access assignments
 
-## What I Got Wrong and Fixed
+### Security Groups
 
-During the build, I found inconsistent department values such as `Finanace`, `Sales Staff`, `HR staff`, and `Contractor`. I corrected them to `Finance`, `Sales`, `HR`, and `Contractors` so the directory uses consistent department values. I also had issues determining the domain name for each username/group. Lol, this took me 1 hour to figure it out.
-I also initially used simple group names such as `Finance`. I corrected them to follow the agreed naming convention, such as `SEC-Dept-Finance`. This reinforced the importance of establishing naming standards before creating directory objects, because correcting inconsistent naming becomes more difficult as a directory grows.
+ Group                   Purpose                               
 
+- `SEC-Dept-Executive`   Executive users                       
+- `SEC-Dept-IT`          IT employees                          
+- `SEC-Dept-Finance`     Finance employees                     
+- `SEC-Dept-Sales`       Sales employees                       
+- `SEC-Dept-HR`          HR employees                          
+- `SEC-Dept-Contractors` External contractors                  
+- `SEC-Role-Helpdesk`    Users with Help Desk responsibilities 
 
-![image alt](https://github.com/LarisaDuru/entra-directory-foundation/blob/592eec166fc251177be5a70fd616a28eb9a60a55/screenshots/Activityauditlog.png)
+## Screenshots
 
+The project includes screenshots showing
+
+1. Northwind users in Entra ID
+2. Individual user details
+3. Security groups and naming convention
+4. Group membership
+5. Audit log activity
+
+Screenshots are stored in the `screenshots` folder.
+
+## Security Lessons Learned
+
+Group-based access is easier to manage and review than assigning access individually to every user.
+I also learned that contractors should be handled deliberately because they are external workers with fixed end dates. Separating contractors from employees makes their access easier to identify and review.
+
+Consistent naming and department values are also important because inconsistent directory data becomes harder to manage as the organization grows.
+
+## Future Improvements
+
+If Northwind grows, I would:
+- Introduce dynamic group membership where appropriate
+- Create additional role-based groups
+- Automate user creation 
+- Implement regular access reviews
+- Improve joiner, mover, and leaver processes
+- Export audit logs for longer-term retention
+- Develop a more formal access governance process
+This project demonstrates that identity management is not just about creating users. The directory needs a structure that makes access understandable, manageable, and scalable. The group design, naming standards, contractor handling, and documentation were created with that goal in mind.
