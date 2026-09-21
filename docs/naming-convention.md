@@ -1,7 +1,8 @@
 # Naming convention
 
 ## Security Group Convention: 
-I used the security group naming conventionSEC-<Type>-<Name>
+I used the security group naming convention
+SEC-<Type>-<Name>
 
 ## Northwind service Department Groups:
 - SEC-Dept-Executive 
