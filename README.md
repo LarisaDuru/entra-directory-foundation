@@ -45,7 +45,33 @@ The sales employees was later expanded to include a fifth salesperson, bringing 
 - `SEC-Dept-Sales`       Sales employees                       
 - `SEC-Dept-HR`          HR employees                          
 - `SEC-Dept-Contractors` External contractors                  
-- `SEC-Role-Helpdesk`    Users with Help Desk responsibilities 
+- `SEC-Role-Helpdesk`    Users with Help Desk responsibilities
+
+  ## Sales Applications and Access Comparison
+
+The four applications selected for Northwind's Sales team are:
+- **Salesforce** CRM for managing customers, leads, and sales opportunities.
+- **Expensify** Expense management for submitting and tracking business expenses.
+- **Microsoft Teams** Communication, meetings, and collaboration.
+- **Docusign** Share files for signatories
+
+### With Groups
+The new salesperson requires **2 steps**:
+- Create the user account.
+-  Add the user to `SEC-Dept-Sales`.
+For five Sales users, this would require **4 application grants** — one grant for each application to the Sales group.
+
+### Without Groups
+
+The new salesperson requires **5 steps**:
+1. Create the user account.
+2. Grant Salesforce access.
+3. Grant Expensify access.
+4. Grant Microsoft Teams access.
+5. Grant SharePoint access.
+For five Sales users, this would require **20 individual application grants**.
+**With groups: 4 application grants**
+**Without groups: 20 individual application grants**
 
 ## Screenshots
 
