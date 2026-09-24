@@ -84,6 +84,7 @@ The project includes screenshots showing
 5. Audit log activity
 
 Screenshots are stored in the `screenshots` folder.
+![image alt](https://github.com/LarisaDuru/entra-directory-foundation/blob/e71d71825e78537454ae887bee2b65db0eabad0f/screenshots/Activityauditlog.png)
 
 ## Security Lessons Learned
 
